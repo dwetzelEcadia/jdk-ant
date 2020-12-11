@@ -8,7 +8,7 @@ ENV PATH "~/bin:${PATH}"
 
 RUN echo "deb http://deb.debian.org/debian buster main contrib" > /etc/apt/sources.list && \
 	echo "deb http://security.debian.org/debian-security buster/updates main contrib" >> /etc/apt/sources.list && \
-	echo "deb http://deb.debian.org/debian buster-updates main contrib""
+	echo "deb http://deb.debian.org/debian buster-updates main contrib"
 
 RUN apt update && \
 	apt install -y ant gettext-base subversion zip unzip wget repo
