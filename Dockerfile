@@ -6,9 +6,9 @@ ENV TZ Europe/Berlin
 ENV ANT_HOME /usr/share/ant
 ENV PATH "~/bin:${PATH}"
 
+RUN echo "deb http://deb.debian.org/debian buster main contrib" > /etc/apt/sources.list && \
+	echo "deb http://security.debian.org/debian-security buster/updates main contrib" >> /etc/apt/sources.list && \
+	echo "deb http://deb.debian.org/debian buster-updates main contrib""
+
 RUN apt update && \
-	apt install -y ant gettext-base subversion zip unzip wget python3&& \
-	mkdir ~/bin && \
-	curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && \
-	chmod a+x ~/bin/repo && \
-	update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+	apt install -y ant gettext-base subversion zip unzip wget repo
